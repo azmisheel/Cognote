@@ -41,7 +41,7 @@ const quizSchema = new mongoose.Schema({
         }
     }],
     userAnswers: [{
-        questionId: {
+        questionIndex: {
             type: Number,
             required: true
         },
@@ -49,7 +49,7 @@ const quizSchema = new mongoose.Schema({
             type: String,
             required: true
         },
-        iscorrect: {
+        isCorrect: {
             type: Boolean,
             required: true
         },

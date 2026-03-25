@@ -40,7 +40,7 @@ export const getAllFlashcardSets = async(req, res, next) => {
 
         res.status(200).json({
             success: true,
-            count: flashcards.length,
+            count: flashcardSets.length,
             data: flashcardSets
         })
     }
@@ -50,7 +50,7 @@ export const getAllFlashcardSets = async(req, res, next) => {
 }
 
 //@desc Mark flashcard as reviewed
-//@route GET api/flashcards/:cardId/review
+//@route POST api/flashcards/:cardId/review
 //@access Private
 export const reviewFlashcards = async(req, res, next) => {
     try{
@@ -165,7 +165,6 @@ export const deleteFlashcardSets = async(req, res, next) => {
             success: true,
             message: 'Flashcard set deleted successfully'
         })
-
     }
     catch(error){
         next(error)

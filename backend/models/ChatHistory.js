@@ -32,7 +32,7 @@ const chatHistorySchema = new mongoose.Schema({
     }]
 }, { timestamps: true });
 
-chatHistorySchema.Schema.index({ userId: 1, uploadDate: -1 });
+chatHistorySchema.index({ userId: 1, uploadDate: -1 });
 
 const ChatHistory = mongoose.model("ChatHistory", chatHistorySchema);
 

@@ -8,9 +8,9 @@ const router = express.Router();
 router.use(protect);
 
 router.get('/', getAllFlashcardSets);
-router.post('/:documentId', getFlashcards);
-router.get('/:cardId/review', reviewFlashcards);
-router.get('/:cardId/star', toggleStarFlashcards);
+router.get('/:documentId', getFlashcards);
+router.post('/:cardId/review', reviewFlashcards);
+router.put('/:cardId/star', toggleStarFlashcards);
 router.delete('/:id', deleteFlashcardSets);
 
 export default router;
