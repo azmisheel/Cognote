@@ -27,9 +27,9 @@ export const register = async (req, res, next) => {
 
         //generate token
         const token = generateToken(user._id);
+        
         res.status(201).json({ success: true, data: { 
-            user: { username: user.username, email: user.email, profileImage: user.profileImage, createdAt: user.createdAt }, token 
-        }, 
+            user: { id:user._id, username: user.username, email: user.email, profileImage: user.profileImage, createdAt: user.createdAt }, token}, 
         message: 'User registered successfully' });
     }
     catch(error){
@@ -64,9 +64,7 @@ export const login = async (req, res, next) => {
 
         // Generate token
         const token = generateToken(user._id);
-        res.status(200).json({ success: true, data: { 
-            user: { id: user._id, username: user.username, email: user.email, profileImage: user.profileImage, createdAt: user.createdAt }, token 
-        }, message: 'Logged in successfully' });
+        res.status(200).json({ success: true, user: { id: user._id, username: user.username, email: user.email, profileImage: user.profileImage, createdAt: user.createdAt }, token , message: 'Logged in successfully' });
     }
     catch(error){
         next(error);

@@ -12,10 +12,10 @@ import FlashCardPage from './pages/Flashcards/FlashCardPage';
 import QuizTakePage from './pages/Quizzes/QuizTakePage';
 import QuizResultPage from './pages/Quizzes/QuizResultPage';
 import ProfilePage from './pages/Profile/ProfilePage';
+import { useAuth } from './context/AuthContext';
 
 const App = () => {
-  const isAuthenticated = false; // Replace with actual authentication logic
-  const loading = false; // Replace with actual loading state
+  const  {isAuthenticated, loading} = useAuth();
 
   if (loading) {
     return (
