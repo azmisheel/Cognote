@@ -23,7 +23,7 @@ const DocumentCard = ({ document, onDelete }) => {
   const navigate = useNavigate();
 
   const handleNavigate = () => {
-    navigate(`/documents/${document.id}`);
+    navigate(`/documents/${document._id}`);
   };
 
   const handleDelete = (e) => {
